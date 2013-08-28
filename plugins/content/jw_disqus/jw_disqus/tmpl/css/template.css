@@ -1,0 +1,33 @@
+/**
+ * @version		3.2
+ * @package		DISQUS Comments for Joomla! (package)
+ * @author		JoomlaWorks - http://www.joomlaworks.net
+ * @copyright	Copyright (c) 2006 - 2012 JoomlaWorks Ltd. All rights reserved.
+ * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ */
+
+/* Common */
+a:active,
+a:focus { outline:0; }
+span#startOfPage { display:none; }
+
+/* ----- LISTING VIEW STYLING ----- */
+/* Disqus comments counter and anchor link */
+a.jwDisqusListingCounterLink,
+a.jwDisqusListingCounterLink:hover { background:url(../images/comment_grey.png) no-repeat 0 50%; padding:0 0 0 20px; margin:0; }
+
+/* ----- ARTICLE VIEW STYLING ----- */
+/* Disqus comments counter and anchor link */
+div.jwDisqusArticleCounter { padding:2px 0; margin:4px 0 12px; border-top:1px solid #e5e5e5; }
+	div.jwDisqusArticleCounter span { display:block; border-top:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf; background:#f9f9f9; text-align:right; padding:4px 8px 4px 20px; margin:0; }
+		a.jwDisqusArticleCounterLink,
+		a.jwDisqusArticleCounterLink:hover { font-size:11px; background:transparent url(../images/comment_grey.png) no-repeat 0 50%; padding:2px 0 2px 20px; margin:0; line-height:16px; }
+
+/* Disqus comments form */
+div.jwDisqusForm { clear:both; }
+	#disqus_thread { padding:8px; margin-top:12px; background:#f9f9f9; border-radius:4px; border:1px solid #dfdfdf; }
+	div#jwDisqusFormFooter { padding:0 8px 8px; text-align:right; }
+		a.dsq-brlink { display:block; float:left; margin:0; padding:0; }
+		a#jwDisqusBackToTop { display:block; float:right; margin:0; padding:0; text-decoration:underline; }
+
+/* END */

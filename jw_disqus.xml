@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>JW_DISQUS</name>
+	<author>JoomlaWorks</author>
+	<authorEmail>contact@joomlaworks.net</authorEmail>
+	<authorUrl>www.joomlaworks.net</authorUrl>
+	<copyright>Copyright (c) 2006 - 2012 JoomlaWorks Ltd. All rights reserved.</copyright>
+	<creationDate>April 6th, 2012</creationDate>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>3.2</version>
+	<description>Thank you for installing DISQUS Comments for Joomla! (by JoomlaWorks).</description>
+	<installfile>install.jw_disqus.php</installfile>
+	<uninstallfile>uninstall.jw_disqus.php</uninstallfile>
+	<scriptfile>script.jw_disqus.php</scriptfile>
+	<updateservers>
+		<server type="extension" priority="1" name="DISQUS Comments for Joomla!">http://www.joomlaworks.gr/updates/jw_disqus.xml</server>
+	</updateservers>
+	<administration>
+		<languages folder="administrator/language/en-GB">
+			<language tag="en-GB">en-GB.com_jw_disqus.ini</language>
+			<language tag="en-GB">en-GB.com_jw_disqus.menu.ini</language>
+			<language tag="en-GB">en-GB.com_jw_disqus.sys.ini</language>
+			<language tag="en-GB">en-GB.plg_content_jw_disqus.ini</language>
+			<language tag="en-GB">en-GB.plg_content_jw_disqus.sys.ini</language>
+			<language tag="en-GB">en-GB.plg_system_jw_disqus.ini</language>
+			<language tag="en-GB">en-GB.plg_system_jw_disqus.sys.ini</language>
+		</languages>
+	</administration>
+	<plugins>
+		<plugin plugin="jw_disqus" group="content" />
+		<plugin plugin="jw_disqus" group="system" />
+	</plugins>
+	<media folder="media" destination="jw_disqus">
+		<filename>Disqus_300x128_24.png</filename>
+	</media>
+</extension>
