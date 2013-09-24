@@ -30,7 +30,7 @@ if (version_compare(JVERSION, '1.6.0', 'ge'))
 			array_unshift($categories, $option);
 
 			// Output
-			return JHTML::_('select.genericlist', $categories, $this->name.'[]', 'class="inputbox" style="width:90%;" multiple="multiple" size="12"', 'value', 'text', $this->value);
+			return JHTML::_('select.genericlist', $categories, $this->name.'[]', 'class="inputbox" style="width:220px;" multiple="multiple" size="12"', 'value', 'text', $this->value);
 		}
 
 	}
