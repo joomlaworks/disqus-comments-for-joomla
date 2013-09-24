@@ -2,12 +2,12 @@
 <extension type="component" version="2.5" method="upgrade">
 	<name>JW_DISQUS</name>
 	<author>JoomlaWorks</author>
-	<authorEmail>contact@joomlaworks.net</authorEmail>
+	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
 	<authorUrl>www.joomlaworks.net</authorUrl>
-	<copyright>Copyright (c) 2006 - 2012 JoomlaWorks Ltd. All rights reserved.</copyright>
-	<creationDate>April 6th, 2012</creationDate>
+	<copyright>Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.</copyright>
+	<creationDate>September 24th, 2013</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>3.2</version>
+	<version>3.3</version>
 	<description>Thank you for installing DISQUS Comments for Joomla! (by JoomlaWorks).</description>
 	<installfile>install.jw_disqus.php</installfile>
 	<uninstallfile>uninstall.jw_disqus.php</uninstallfile>
