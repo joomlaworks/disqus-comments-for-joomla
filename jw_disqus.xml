@@ -13,7 +13,7 @@
 	<uninstallfile>uninstall.jw_disqus.php</uninstallfile>
 	<scriptfile>script.jw_disqus.php</scriptfile>
 	<updateservers>
-		<server type="extension" priority="1" name="DISQUS Comments for Joomla!">http://www.joomlaworks.gr/updates/jw_disqus.xml</server>
+		<server type="extension" priority="1" name="DISQUS Comments for Joomla!">http://www.joomlaworks.net/updates/jw_disqus.xml</server>
 	</updateservers>
 	<administration>
 		<languages folder="administrator/language/en-GB">
