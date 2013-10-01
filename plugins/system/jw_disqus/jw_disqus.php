@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		3.3
+ * @version		3.4
  * @package		DISQUS Comments for Joomla! (package)
  * @author		JoomlaWorks - http://www.joomlaworks.net
  * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
@@ -21,12 +21,18 @@ class plgSystemJw_disqus extends JPlugin
 
 	// JoomlaWorks reference parameters
 	var $plg_name = "jw_disqus";
-	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.3) starts here -->\n";
-	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.3) ends here -->\n";
+	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) starts here -->\n";
+	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) ends here -->\n";
 
 	function plgSystemJw_disqus(&$subject, $params)
 	{
 		parent::__construct($subject, $params);
+		
+		// Define the DS constant under Joomla! 3.0
+		if (!defined('DS'))
+		{
+			define('DS', DIRECTORY_SEPARATOR);
+		}
 	}
 
 	function onAfterRender()
@@ -97,7 +103,7 @@ class plgSystemJw_disqus extends JPlugin
 		{
 			$elementToGrab = '</body>';
 			$htmlToInsert = "
-				<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.3) -->
+				<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) -->
 				<script type=\"text/javascript\">
 					//<![CDATA[
 					var disqus_shortname = '{$disqusSubDomain}';
