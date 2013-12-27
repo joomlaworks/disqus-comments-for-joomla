@@ -169,7 +169,8 @@ class plgContentJw_disqus extends JPlugin
 		$output = new stdClass;
 
 		// Article URLs
-		$websiteURL = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != "off") ? "https://".$_SERVER['HTTP_HOST'] : "http://".$_SERVER['HTTP_HOST'];
+		$scheme = JUri::getInstance()->getScheme() . '://';
+		$websiteURL = rtrim(JURI::base(), '/');
 
 		if (version_compare(JVERSION, '1.6.0', 'ge'))
 		{
@@ -216,13 +217,13 @@ class plgContentJw_disqus extends JPlugin
 				};
 				(function() {
 					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					dsq.src = '" . $scheme . "' + disqus_shortname + '.disqus.com/embed.js';
 					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 				})();
 				//]]>
 			</script>
 			<noscript>
-				<a href=\"http://".$disqusSubDomain.".disqus.com/?url=ref\">".JText::_("JW_DISQUS_VIEW_THE_DISCUSSION_THREAD")."</a>
+				<a href=\"$scheme$disqusSubDomain.disqus.com/?url=ref\">".JText::_("JW_DISQUS_VIEW_THE_DISCUSSION_THREAD")."</a>
 			</noscript>
 			";
 		}
