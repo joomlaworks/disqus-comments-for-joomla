@@ -101,6 +101,7 @@ class plgSystemJw_disqus extends JPlugin
 		// Append head includes only when the document is in HTML mode
 		if (JRequest::getCmd('format') == 'html' || JRequest::getCmd('format') == '')
 		{
+			$scheme = JUri::getInstance()->getScheme() . '://';
 			$elementToGrab = '</body>';
 			$htmlToInsert = "
 				<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) -->
@@ -113,7 +114,7 @@ class plgSystemJw_disqus extends JPlugin
 					(function () {
 						var s = document.createElement('script'); s.async = true;
 						s.type = 'text/javascript';
-						s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+						s.src = '$scheme' + disqus_shortname + '.disqus.com/count.js';
 						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 					}());
 					//]]>
