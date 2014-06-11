@@ -80,14 +80,16 @@ class Com_jw_disqusInstallerScript
         $rows = 0;
         
         if (version_compare(JVERSION, '1.6.0', 'ge')){
-        	$document = JFactory::getDocument();
-			$document->addStyleSheet('http://yui.yahooapis.com/pure/0.5.0/pure-min.css');
-			$tableClass = "adminlist pure-table pure-table-striped";
+        	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");</style>');
+			$tableClass = 'adminlist pure-table pure-table-striped';
 		} else {
-			$tableClass = "adminlist";
+			$styleDeclaration = '';
+			$tableClass = 'adminlist';
 		}
 
 		?>
+		<?php echo $styleDeclaration; ?>
+		
 		<h2><?php echo JText::_('COM_JW_DISQUS_INSTALLATION_STATUS'); ?></h2>
 		<table class="<?php echo $tableClass; ?>">
 			<thead>
@@ -132,14 +134,16 @@ class Com_jw_disqusInstallerScript
 		$rows = 0;
 		
         if (version_compare(JVERSION, '1.6.0', 'ge')){
-        	$document = JFactory::getDocument();
-			$document->addStyleSheet('http://yui.yahooapis.com/pure/0.5.0/pure-min.css');
-			$tableClass = "adminlist pure-table pure-table-striped";
+        	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");</style>');
+			$tableClass = 'adminlist pure-table pure-table-striped';
 		} else {
-			$tableClass = "adminlist";
+			$styleDeclaration = '';
+			$tableClass = 'adminlist';
 		}
 		
 		?>
+		<?php echo $styleDeclaration; ?>
+		
 		<h2><?php echo JText::_('COM_JW_DISQUS_REMOVAL_STATUS'); ?></h2>
 		<table class="<?php echo $tableClass; ?>">
 			<thead>
