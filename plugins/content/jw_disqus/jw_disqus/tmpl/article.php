@@ -18,7 +18,7 @@ defined('_JEXEC') or die;
 <!-- DISQUS comments counter and anchor link -->
 <div class="jwDisqusArticleCounter">
 	<span>
-		<a class="jwDisqusArticleCounterLink" href="<?php echo $output->itemURL; ?>#disqus_thread" data-disqus-identifier="<?php echo $output->disqusIdentifier; ?>"><?php echo JText::_("JW_DISQUS_VIEW_COMMENTS"); ?></a>
+		<a class="jwDisqusArticleCounterLink" href="#disqus_thread" data-disqus-identifier="<?php echo $output->disqusIdentifier; ?>"><?php echo JText::_("JW_DISQUS_VIEW_COMMENTS"); ?></a>
 	</span>
 	<div class="clr"></div>
 </div>
@@ -33,7 +33,7 @@ defined('_JEXEC') or die;
 		<a target="_blank" href="http://disqus.com" class="dsq-brlink">
 			<?php echo JText::_("JW_DISQUS_BLOG_COMMENTS_POWERED_BY"); ?> <span class="logo-disqus">DISQUS</span>
 		</a>
-		<a id="jwDisqusBackToTop" href="<?php echo $output->itemURL; ?>#startOfPage">
+		<a id="jwDisqusBackToTop" href="#startOfPage">
 			<?php echo JText::_("JW_DISQUS_BACK_TO_TOP"); ?>
 		</a>
 		<div class="clr"></div>
