@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 
 ?>
 
-<span id="startOfPage"></span>
+<a id="startOfPage" href="#"></a>
 
 <?php if($disqusArticleCounter): ?>
 <!-- DISQUS comments counter and anchor link -->

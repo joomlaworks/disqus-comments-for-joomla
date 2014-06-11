@@ -9,7 +9,7 @@
 /* Common */
 a:active,
 a:focus { outline:0; }
-span#startOfPage { display:none; }
+#startOfPage { display:none; }
 
 /* ----- LISTING VIEW STYLING ----- */
 /* Disqus comments counter and anchor link */
