@@ -79,13 +79,8 @@ class Com_jw_disqusInstallerScript
         $language->load('com_jw_disqus');
         $rows = 0;
         
-        if (version_compare(JVERSION, '1.6.0', 'ge')){
-        	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");</style>';
-			$tableClass = 'adminlist pure-table pure-table-striped';
-		} else {
-			$styleDeclaration = '';
-			$tableClass = 'adminlist';
-		}
+    	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css"); .pure-table {width:80%;}</style>';
+		$tableClass = 'pure-table pure-table-striped';
 
 		?>
 		<?php echo $styleDeclaration; ?>
@@ -133,14 +128,9 @@ class Com_jw_disqusInstallerScript
 		$language->load('com_jw_disqus');
 		$rows = 0;
 		
-        if (version_compare(JVERSION, '1.6.0', 'ge')){
-        	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");</style>';
-			$tableClass = 'adminlist pure-table pure-table-striped';
-		} else {
-			$styleDeclaration = '';
-			$tableClass = 'adminlist';
-		}
-		
+    	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css"); .pure-table {width:80%;}</style>';
+		$tableClass = 'pure-table pure-table-striped';
+
 		?>
 		<?php echo $styleDeclaration; ?>
 		
