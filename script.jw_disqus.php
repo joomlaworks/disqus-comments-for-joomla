@@ -78,15 +78,15 @@ class Com_jw_disqusInstallerScript
         $language = JFactory::getLanguage();
         $language->load('com_jw_disqus');
         $rows = 0;
-        
-    	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css"); .pure-table {width:80%;}</style>';
-		$tableClass = 'pure-table pure-table-striped';
 
 		?>
-		<?php echo $styleDeclaration; ?>
+		<style>
+			@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");
+			.pure-table {width:80%;}
+		</style>
 		
 		<h2><?php echo JText::_('COM_JW_DISQUS_INSTALLATION_STATUS'); ?></h2>
-		<table class="<?php echo $tableClass; ?>">
+		<table class="pure-table pure-table-striped">
 			<thead>
 				<tr>
 					<th colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
@@ -128,14 +128,14 @@ class Com_jw_disqusInstallerScript
 		$language->load('com_jw_disqus');
 		$rows = 0;
 		
-    	$styleDeclaration = '<style>@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css"); .pure-table {width:80%;}</style>';
-		$tableClass = 'pure-table pure-table-striped';
-
 		?>
-		<?php echo $styleDeclaration; ?>
+		<style>
+			@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");
+			.pure-table {width:80%;}
+		</style>
 		
 		<h2><?php echo JText::_('COM_JW_DISQUS_REMOVAL_STATUS'); ?></h2>
-		<table class="<?php echo $tableClass; ?>">
+		<table class="pure-table pure-table-striped">
 			<thead>
 				<tr>
 					<th colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
