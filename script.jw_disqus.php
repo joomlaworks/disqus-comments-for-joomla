@@ -94,8 +94,8 @@ class Com_jw_disqusInstallerScript
 		<table class="<?php echo $tableClass; ?>">
 			<thead>
 				<tr>
-					<th class="title" colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
-					<th width="30%"><?php echo JText::_('COM_JW_DISQUS_STATUS'); ?></th>
+					<th colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
+					<th><?php echo JText::_('COM_JW_DISQUS_STATUS'); ?></th>
 				</tr>
 			</thead>
 			<tfoot>
@@ -104,20 +104,20 @@ class Com_jw_disqusInstallerScript
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr class="row0">
-					<td class="key" colspan="2"><?php echo JText::_('COM_JW_DISQUS_COMPONENT'); ?></td>
+				<tr>
+					<td colspan="2"><?php echo JText::_('COM_JW_DISQUS_COMPONENT'); ?></td>
 					<td><strong><?php echo JText::_('COM_JW_DISQUS_INSTALLED'); ?></strong></td>
 				</tr>
 				<?php if (count($status->plugins)): ?>
 				<tr>
-					<th><?php echo JText::_('COM_JW_DISQUS_PLUGIN'); ?></th>
-					<th><?php echo JText::_('COM_JW_DISQUS_GROUP'); ?></th>
-					<th></th>
+					<td><?php echo JText::_('COM_JW_DISQUS_PLUGIN'); ?></td>
+					<td><?php echo JText::_('COM_JW_DISQUS_GROUP'); ?></td>
+					<td></td>
 				</tr>
 				<?php foreach ($status->plugins as $plugin): ?>
-				<tr class="row<?php echo (++ $rows % 2); ?>">
-					<td class="key"><?php echo ucfirst($plugin['name']); ?></td>
-					<td class="key"><?php echo ucfirst($plugin['group']); ?></td>
+				<tr>
+					<td><?php echo ucfirst($plugin['name']); ?></td>
+					<td><?php echo ucfirst($plugin['group']); ?></td>
 					<td><strong><?php echo ($plugin['result']) ? JText::_('COM_JW_DISQUS_INSTALLED') : JText::_('COM_JW_DISQUS_NOT_INSTALLED'); ?></strong></td>
 				</tr>
 				<?php endforeach; ?>
@@ -148,8 +148,8 @@ class Com_jw_disqusInstallerScript
 		<table class="<?php echo $tableClass; ?>">
 			<thead>
 				<tr>
-					<th class="title" colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
-					<th width="30%"><?php echo JText::_('COM_JW_DISQUS_STATUS'); ?></th>
+					<th colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
+					<th><?php echo JText::_('COM_JW_DISQUS_STATUS'); ?></th>
 				</tr>
 			</thead>
 			<tfoot>
@@ -158,20 +158,20 @@ class Com_jw_disqusInstallerScript
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr class="row0">
-					<td class="key" colspan="2"><?php echo JText::_('COM_JW_DISQUS_COMPONENT'); ?></td>
+				<tr>
+					<td colspan="2"><?php echo JText::_('COM_JW_DISQUS_COMPONENT'); ?></td>
 					<td><strong><?php echo JText::_('COM_JW_DISQUS_REMOVED'); ?></strong></td>
 				</tr>
 				<?php if (count($status->plugins)): ?>
 				<tr>
-					<th><?php echo JText::_('COM_JW_DISQUS_PLUGIN'); ?></th>
-					<th><?php echo JText::_('COM_JW_DISQUS_GROUP'); ?></th>
-					<th></th>
+					<td><?php echo JText::_('COM_JW_DISQUS_PLUGIN'); ?></td>
+					<td><?php echo JText::_('COM_JW_DISQUS_GROUP'); ?></td>
+					<td></td>
 				</tr>
 				<?php foreach ($status->plugins as $plugin): ?>
-				<tr class="row<?php echo (++ $rows % 2); ?>">
-					<td class="key"><?php echo ucfirst($plugin['name']); ?></td>
-					<td class="key"><?php echo ucfirst($plugin['group']); ?></td>
+				<tr>
+					<td><?php echo ucfirst($plugin['name']); ?></td>
+					<td><?php echo ucfirst($plugin['group']); ?></td>
 					<td><strong><?php echo ($plugin['result']) ? JText::_('COM_JW_DISQUS_REMOVED') : JText::_('COM_JW_DISQUS_NOT_REMOVED'); ?></strong></td>
 				</tr>
 				<?php endforeach; ?>
