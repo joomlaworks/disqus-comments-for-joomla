@@ -1,9 +1,9 @@
 <?php
 /**
- * @version		3.4
+ * @version		3.5
  * @package		DISQUS Comments for Joomla! (package)
  * @author		JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
+ * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -21,8 +21,8 @@ class plgSystemJw_disqus extends JPlugin
 
 	// JoomlaWorks reference parameters
 	var $plg_name = "jw_disqus";
-	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) starts here -->\n";
-	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) ends here -->\n";
+	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) starts here -->\n";
+	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) ends here -->\n";
 
 	function plgSystemJw_disqus(&$subject, $params)
 	{
@@ -89,9 +89,11 @@ class plgSystemJw_disqus extends JPlugin
 			// Perform some parameter cleanups
 			$disqusSubDomain = str_replace(array(
 				'http://',
+				'https://',
 				'.disqus.com/',
 				'.disqus.com'
 			), array(
+				'',
 				'',
 				'',
 				''
@@ -103,7 +105,7 @@ class plgSystemJw_disqus extends JPlugin
 		{
 			$elementToGrab = '</body>';
 			$htmlToInsert = "
-				<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) -->
+				<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) -->
 				<script type=\"text/javascript\">
 					//<![CDATA[
 					var disqus_shortname = '{$disqusSubDomain}';
@@ -113,7 +115,7 @@ class plgSystemJw_disqus extends JPlugin
 					(function () {
 						var s = document.createElement('script'); s.async = true;
 						s.type = 'text/javascript';
-						s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+						s.src = '//' + disqus_shortname + '.disqus.com/count.js';
 						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 					}());
 					//]]>

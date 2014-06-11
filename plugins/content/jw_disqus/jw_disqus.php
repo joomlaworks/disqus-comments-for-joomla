@@ -1,9 +1,9 @@
 <?php
 /**
- * @version		3.4
+ * @version		3.5
  * @package		DISQUS Comments for Joomla! (package)
  * @author		JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2013 JoomlaWorks Ltd. All rights reserved.
+ * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
  * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -21,8 +21,8 @@ class plgContentJw_disqus extends JPlugin
 
 	// JoomlaWorks reference parameters
 	var $plg_name = "jw_disqus";
-	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) starts here -->\n";
-	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.4) ends here -->\n";
+	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) starts here -->\n";
+	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) ends here -->\n";
 
 	function plgContentJw_disqus(&$subject, $params)
 	{
@@ -216,7 +216,7 @@ class plgContentJw_disqus extends JPlugin
 				};
 				(function() {
 					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 				})();
 				//]]>
@@ -252,19 +252,6 @@ class plgContentJw_disqus extends JPlugin
 				else
 				{
 					JHTML::_('behavior.mootools');
-				}
-
-				if (!defined('JW_DISQUS_JS'))
-				{
-					$document->addScriptDeclaration("
-						window.addEvent('load',function(){
-							// Smooth Scroll
-							new SmoothScroll({
-								duration: 500
-							});
-						});
-					");
-					define('JW_DISQUS_JS', true);
 				}
 			}
 
