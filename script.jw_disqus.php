@@ -78,9 +78,18 @@ class Com_jw_disqusInstallerScript
         $language = JFactory::getLanguage();
         $language->load('com_jw_disqus');
         $rows = 0;
+        
+        if (version_compare(JVERSION, '1.6.0', 'ge')){
+        	$document = JFactory::getDocument();
+			$document->addStyleSheet('http://yui.yahooapis.com/pure/0.5.0/pure-min.css');
+			$tableClass = "adminlist pure-table pure-table-striped";
+		} else {
+			$tableClass = "adminlist";
+		}
+
 		?>
 		<h2><?php echo JText::_('COM_JW_DISQUS_INSTALLATION_STATUS'); ?></h2>
-		<table class="adminlist">
+		<table class="<?php echo $tableClass; ?>">
 			<thead>
 				<tr>
 					<th class="title" colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
@@ -121,9 +130,18 @@ class Com_jw_disqusInstallerScript
 		$language = JFactory::getLanguage();
 		$language->load('com_jw_disqus');
 		$rows = 0;
+		
+        if (version_compare(JVERSION, '1.6.0', 'ge')){
+        	$document = JFactory::getDocument();
+			$document->addStyleSheet('http://yui.yahooapis.com/pure/0.5.0/pure-min.css');
+			$tableClass = "adminlist pure-table pure-table-striped";
+		} else {
+			$tableClass = "adminlist";
+		}
+		
 		?>
 		<h2><?php echo JText::_('COM_JW_DISQUS_REMOVAL_STATUS'); ?></h2>
-		<table class="adminlist">
+		<table class="<?php echo $tableClass; ?>">
 			<thead>
 				<tr>
 					<th class="title" colspan="2"><?php echo JText::_('COM_JW_DISQUS_EXTENSION'); ?></th>
