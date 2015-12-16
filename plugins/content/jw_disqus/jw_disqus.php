@@ -93,9 +93,11 @@ class plgContentJw_disqus extends JPlugin
 		// ----------------------------------- Get plugin parameters -----------------------------------
 		$plugin = JPluginHelper::getPlugin('content', $this->plg_name);
 		$pluginParams = version_compare(JVERSION, '1.6.0', 'lt') ? new JParameter($plugin->params) : new JRegistry($plugin->params);
-
+		$lang =& JFactory::getLanguage();
+		$locales = $lang->getTag();
 		$disqusSubDomain = trim($pluginParams->get('disqusSubDomain', ''));
-		$disqusLanguage = $pluginParams->get('disqusLanguage');
+		$disqusLanguage = $locales[0];
+		$disqusLanguage2 = $locales[1];
 		$selectedCategories = $pluginParams->get('selectedCategories', '');
 		$selectedMenus = $pluginParams->get('selectedMenus', '');
 		$disqusListingCounter = $pluginParams->get('disqusListingCounter', 1);
@@ -212,7 +214,7 @@ class plgContentJw_disqus extends JPlugin
 				var disqus_identifier = '".substr(md5($disqusSubDomain), 0, 10)."_id".$row->id."';
 				var disqus_developer = '".$disqusDevMode."';
 				var disqus_config = function(){
-					this.language = '{$disqusLanguage}';
+					this.language = '{$disqusLanguage}{$disqusLanguage2}';
 				};
 				(function() {
 					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
