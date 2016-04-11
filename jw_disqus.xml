@@ -8,12 +8,12 @@
 	<creationDate>April 11th, 2016</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<version>3.6.0</version>
-	<description>Thank you for installing Disqus Comments for Joomla (by JoomlaWorks).</description>
+	<description>Thank you for installing Disqus Comments (for Joomla) [by JoomlaWorks].</description>
 	<installfile>install.jw_disqus.php</installfile>
 	<uninstallfile>uninstall.jw_disqus.php</uninstallfile>
 	<scriptfile>script.jw_disqus.php</scriptfile>
 	<updateservers>
-		<server type="extension" priority="1" name="Disqus Comments for Joomla">http://cdn.joomlaworks.org/updates/disqus.xml</server>
+		<server type="extension" priority="1" name="Disqus Comments (for Joomla)">http://cdn.joomlaworks.org/updates/disqus.xml</server>
 	</updateservers>
 	<administration>
 		<languages folder="administrator/language/en-GB">

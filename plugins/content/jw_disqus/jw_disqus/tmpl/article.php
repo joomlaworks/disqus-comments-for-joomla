@@ -1,7 +1,7 @@
 <?php
 /**
  * @version    3.6.x
- * @package    Disqus Comments for Joomla
+ * @package    Disqus Comments (for Joomla)
  * @author     JoomlaWorks - http://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html

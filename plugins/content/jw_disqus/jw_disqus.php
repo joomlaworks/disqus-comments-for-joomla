@@ -1,7 +1,7 @@
 <?php
 /**
  * @version    3.6.x
- * @package    Disqus Comments for Joomla
+ * @package    Disqus Comments (for Joomla)
  * @author     JoomlaWorks - http://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
@@ -21,13 +21,13 @@ class plgContentJw_disqus extends JPlugin
 
 	// JoomlaWorks reference parameters
 	var $plg_name = "jw_disqus";
-	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments for Joomla\" (v3.6.0) starts here -->\n";
-	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"Disqus Comments for Joomla\" (v3.6.0) ends here -->\n";
+	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.6.0) starts here -->\n";
+	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.6.0) ends here -->\n";
 
 	function __construct(&$subject, $params)
 	{
 		parent::__construct($subject, $params);
-		
+
 		// Define the DS constant under Joomla! 3.0
 		if (!defined('DS'))
 		{
@@ -222,7 +222,7 @@ class plgContentJw_disqus extends JPlugin
 				//]]>
 			</script>
 			<noscript>
-				<a href=\"http://".$disqusSubDomain.".disqus.com/?url=ref\">".JText::_("JW_DISQUS_VIEW_THE_DISCUSSION_THREAD")."</a>
+				<a href=\"https://".$disqusSubDomain.".disqus.com/?url=ref\">".JText::_("JW_DISQUS_VIEW_THE_DISCUSSION_THREAD")."</a>
 			</noscript>
 			";
 		}
