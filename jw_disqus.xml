@@ -4,16 +4,16 @@
 	<author>JoomlaWorks</author>
 	<authorEmail>please-use-the-contact-form@joomlaworks.net</authorEmail>
 	<authorUrl>www.joomlaworks.net</authorUrl>
-	<copyright>Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.</copyright>
-	<creationDate>June 12th, 2014</creationDate>
+	<copyright>Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.</copyright>
+	<creationDate>April 11th, 2016</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>3.5</version>
-	<description>Thank you for installing DISQUS Comments for Joomla! (by JoomlaWorks).</description>
+	<version>3.6.0</version>
+	<description>Thank you for installing Disqus Comments for Joomla (by JoomlaWorks).</description>
 	<installfile>install.jw_disqus.php</installfile>
 	<uninstallfile>uninstall.jw_disqus.php</uninstallfile>
 	<scriptfile>script.jw_disqus.php</scriptfile>
 	<updateservers>
-		<server type="extension" priority="1" name="DISQUS Comments for Joomla!">http://www.joomlaworks.net/updates/jw_disqus.xml</server>
+		<server type="extension" priority="1" name="Disqus Comments for Joomla">http://cdn.joomlaworks.org/updates/disqus.xml</server>
 	</updateservers>
 	<administration>
 		<languages folder="administrator/language/en-GB">

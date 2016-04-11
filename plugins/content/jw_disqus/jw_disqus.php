@@ -1,10 +1,10 @@
 <?php
 /**
- * @version		3.5
- * @package		DISQUS Comments for Joomla! (package)
- * @author		JoomlaWorks - http://www.joomlaworks.net
- * @copyright	Copyright (c) 2006 - 2014 JoomlaWorks Ltd. All rights reserved.
- * @license		GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ * @version    3.6.x
+ * @package    Disqus Comments for Joomla
+ * @author     JoomlaWorks - http://www.joomlaworks.net
+ * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
 // no direct access
@@ -21,10 +21,10 @@ class plgContentJw_disqus extends JPlugin
 
 	// JoomlaWorks reference parameters
 	var $plg_name = "jw_disqus";
-	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) starts here -->\n";
-	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"DISQUS Comments for Joomla!\" (v3.5) ends here -->\n";
+	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments for Joomla\" (v3.6.0) starts here -->\n";
+	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"Disqus Comments for Joomla\" (v3.6.0) ends here -->\n";
 
-	function plgContentJw_disqus(&$subject, $params)
+	function __construct(&$subject, $params)
 	{
 		parent::__construct($subject, $params);
 		
