@@ -42,7 +42,7 @@ class plgContentJw_disqus extends JPlugin
 	}
 
 	// Joomla! 1.6+
-	function onContentPrepare($context, &$row, &$params, $page = 0)
+	function onContentAfterDisplay($context, &$row, &$params, $page = 0)
 	{
 		$this->renderDisqus($row, $params, $page = 0);
 	}
