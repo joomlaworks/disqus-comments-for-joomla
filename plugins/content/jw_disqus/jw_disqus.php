@@ -166,7 +166,7 @@ class plgContentJw_disqus extends JPlugin
             if ($view == 'article') {
                 $itemURL = $row->readmore_link;
             } else {
-                if (version_compare(JVERSION, '3.0.0', 'ge')) {
+                if ($option == "com_tags" && version_compare(JVERSION, '3.0.0', 'ge')) {
                     $row->slug = $row->core_alias;
                 }
                 $itemURL = JRoute::_(ContentHelperRoute::getArticleRoute($row->slug, $row->catid));
