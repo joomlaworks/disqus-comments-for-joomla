@@ -30,7 +30,7 @@ defined('_JEXEC') or die;
 <div class="jwDisqusForm">
     <?php echo $output->comments; ?>
     <div id="jwDisqusFormFooter">
-        <a target="_blank" href="http://disqus.com" class="dsq-brlink">
+        <a target="_blank" href="https://disqus.com" class="dsq-brlink">
             <?php echo JText::_("JW_DISQUS_BLOG_COMMENTS_POWERED_BY"); ?> <span class="logo-disqus">DISQUS</span>
         </a>
         <a id="jwDisqusBackToTop" href="#startOfPage">

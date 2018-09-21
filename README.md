@@ -5,9 +5,9 @@ Disqus Comments (for Joomla)
 
 In short, the most important features of the service are realtime comments, inline media embedding, mobile commenting, social integration with Twitter, Facebook & other services and great moderation & anti-spam tools.
 
-You can learn more about all Disqus features at: http://disqus.com/features
+You can learn more about all Disqus features at: https://disqus.com/features
 
-Signup for a free account at: http://disqus.com
+Signup for a free account at: https://disqus.com
 
 
 ## WHY CHOOSE DISQUS? HIGHLIGHTS OF THE DISQUS COMMENT SYSTEM
