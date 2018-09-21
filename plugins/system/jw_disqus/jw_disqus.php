@@ -99,26 +99,14 @@ class plgSystemJw_disqus extends JPlugin
             ), $disqusSubDomain);
         }
 
-        // Append head includes only when the document is in HTML mode
+        // Append to the <body> only when the document is in HTML mode
         if (JRequest::getCmd('format') == 'html' || JRequest::getCmd('format') == '') {
             $elementToGrab = '</body>';
             $htmlToInsert = "
-				<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) -->
-				<script type=\"text/javascript\">
-					//<![CDATA[
-					var disqus_shortname = '{$disqusSubDomain}';
-					var disqus_config = function(){
-						this.language = '{$disqusLanguage}';
-					};
-					(function () {
-						var s = document.createElement('script'); s.async = true;
-						s.type = 'text/javascript';
-						s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-					}());
-					//]]>
-				</script>
-			";
+                <!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) -->
+                <script>var disqus_config = function(){this.language = '{$disqusLanguage}';};</script>
+                <script id=\"dsq-count-scr\" src=\"//{$disqusSubDomain}.disqus.com/count.js\" async></script>
+            ";
 
             // Output
             $buffer = JResponse::getBody();

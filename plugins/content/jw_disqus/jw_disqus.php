@@ -189,27 +189,25 @@ class plgContentJw_disqus extends JPlugin
         // Fetch elements specific to the "article" view only
         if (in_array($currectCategory, $categories) && in_array($itemid, $menus) && $option == 'com_content' && $view == 'article') {
             $output->comments = "
-			<div id=\"disqus_thread\"></div>
-			<script type=\"text/javascript\">
-				//<![CDATA[
-				var disqus_shortname = '".$disqusSubDomain."';
-				var disqus_url = '".$output->itemURL."';
-				var disqus_identifier = '".substr(md5($disqusSubDomain), 0, 10)."_id".$row->id."';
-				var disqus_developer = '".$disqusDevMode."';
-				var disqus_config = function(){
-					this.language = '{$disqusLanguage}';
-				};
-				(function() {
-					var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-					dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-					(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				})();
-				//]]>
-			</script>
-			<noscript>
-				<a href=\"https://".$disqusSubDomain.".disqus.com/?url=ref\">".JText::_("JW_DISQUS_VIEW_THE_DISCUSSION_THREAD")."</a>
-			</noscript>
-			";
+            <div id=\"disqus_thread\"></div>
+            <script>
+                var disqus_developer = '".$disqusDevMode."';
+                var disqus_config = function(){
+                    this.page.url = '".$output->itemURL."';
+                    this.page.identifier = '".substr(md5($disqusSubDomain), 0, 10)."_id".$row->id."';
+                    this.language = '{$disqusLanguage}';
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://{$disqusSubDomain}.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>
+                <a href=\"https://{$disqusSubDomain}.disqus.com/?url=ref_noscript\">".JText::_("JW_DISQUS_VIEW_THE_DISCUSSION_THREAD")."</a>
+            </noscript>
+            ";
         }
 
         // ----------------------------------- Render the output -----------------------------------
