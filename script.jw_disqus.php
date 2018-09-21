@@ -72,7 +72,7 @@ class Com_jw_disqusInstallerScript
         $rows = 0; ?>
 		<style>
 			@import url("https://unpkg.com/purecss@1.0.0/build/pure-min.css");
-			.pure-table {width:80%;}
+			.pure-table {width:80%;margin-bottom:40px;}
 		</style>
 
 		<h2><?php echo JText::_('COM_JW_DISQUS_INSTALLATION_STATUS'); ?></h2>
@@ -119,7 +119,7 @@ class Com_jw_disqusInstallerScript
         $rows = 0; ?>
 		<style>
 			@import url("https://unpkg.com/purecss@1.0.0/build/pure-min.css");
-			.pure-table {width:80%;}
+			.pure-table {width:80%;margin-bottom:40px;}
 		</style>
 
 		<h2><?php echo JText::_('COM_JW_DISQUS_REMOVAL_STATUS'); ?></h2>
