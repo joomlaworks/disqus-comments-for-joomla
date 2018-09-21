@@ -88,7 +88,7 @@ class plgContentJw_disqus extends JPlugin
                 return;
             }
         }
-        if (!$row->id || $option == 'com_rokdownloads') {
+        if (!$row->id || $option == 'com_k2' || $option == 'com_rokdownloads') {
             return;
         }
 
