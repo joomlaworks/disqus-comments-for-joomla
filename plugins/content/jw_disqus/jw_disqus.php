@@ -249,11 +249,6 @@ class plgContentJw_disqus extends JPlugin
                 $row->text = $getArticleTemplate;
             } elseif ($disqusListingCounter && (($option == 'com_content' && ($view == 'frontpage' || $view == "featured" || $view == 'section' || $view == 'category')) || $parsedInModule == 1)) {
 
-                // Set '$row->text' to '$row->introtext' for J!1.6+
-                if (version_compare(JVERSION, '1.6.0', 'ge')) {
-                    $row->text = $row->introtext;
-                }
-
                 // Fetch the template
                 ob_start();
                 $dsqListingPath = DisqusHelper::getTemplatePath($this->plg_name, 'listing.php');
