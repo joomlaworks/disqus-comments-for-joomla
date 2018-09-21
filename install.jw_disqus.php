@@ -12,7 +12,7 @@ defined('_JEXEC') or die ;
 
 if (version_compare(JVERSION, '1.6.0', 'lt')) {
     jimport('joomla.installer.installer');
-    $mainframe = JFactory::getApplication();
+    $app = JFactory::getApplication();
     $db = JFactory::getDBO();
 
     // Load language file

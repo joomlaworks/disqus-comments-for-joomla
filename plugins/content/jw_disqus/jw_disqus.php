@@ -17,7 +17,6 @@ if (version_compare(JVERSION, '1.6.0', 'ge')) {
 
 class plgContentJw_disqus extends JPlugin
 {
-
     // JoomlaWorks reference parameters
     public $plg_name = "jw_disqus";
     public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) starts here -->\n";
@@ -50,9 +49,8 @@ class plgContentJw_disqus extends JPlugin
     {
 
         // API
-        $mainframe = JFactory::getApplication();
+        $app = JFactory::getApplication();
         $document = JFactory::getDocument();
-        $user = JFactory::getUser();
 
         // Assign paths
         $sitePath = JPATH_SITE;
@@ -165,13 +163,13 @@ class plgContentJw_disqus extends JPlugin
         $websiteURL = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != "off") ? "https://".$_SERVER['HTTP_HOST'] : "http://".$_SERVER['HTTP_HOST'];
 
         if (version_compare(JVERSION, '1.6.0', 'ge')) {
-            $levels = $user->getAuthorisedViewLevels();
-            if (in_array($row->access, $levels)) {
-                if ($view == 'article') {
-                    $itemURL = $row->readmore_link;
-                } else {
-                    $itemURL = JRoute::_(ContentHelperRoute::getArticleRoute($row->slug, $row->catid));
+            if ($view == 'article') {
+                $itemURL = $row->readmore_link;
+            } else {
+                if (version_compare(JVERSION, '3.0.0', 'ge')) {
+                    $row->slug = $row->core_alias;
                 }
+                $itemURL = JRoute::_(ContentHelperRoute::getArticleRoute($row->slug, $row->catid));
             }
         } else {
             $itemURL = JRoute::_(ContentHelperRoute::getArticleRoute($row->slug, $row->catslug, $row->sectionid));

@@ -17,7 +17,6 @@ if (version_compare(JVERSION, '1.6.0', 'ge')) {
 
 class plgSystemJw_disqus extends JPlugin
 {
-
     // JoomlaWorks reference parameters
     public $plg_name = "jw_disqus";
     public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) starts here -->\n";
@@ -37,7 +36,7 @@ class plgSystemJw_disqus extends JPlugin
     {
 
         // API
-        $mainframe = JFactory::getApplication();
+        $app = JFactory::getApplication();
         $document = JFactory::getDocument();
 
         // Assign paths
@@ -70,7 +69,7 @@ class plgSystemJw_disqus extends JPlugin
         JPlugin::loadLanguage('plg_system_'.$this->plg_name, JPATH_ADMINISTRATOR);
 
         // Admin check
-        if ($mainframe->isAdmin()) {
+        if ($app->isAdmin()) {
             return;
         }
 
