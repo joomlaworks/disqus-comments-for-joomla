@@ -14,7 +14,7 @@ a:focus {outline:0;}
 /* ----- LISTING VIEW STYLING ----- */
 /* Disqus comments counter and anchor link */
 a.jwDisqusListingCounterLink,
-a.jwDisqusListingCounterLink:hover {background:url(../images/comment_grey.png) no-repeat 0 50%;padding:0 0 0 20px;margin:0;}
+a.jwDisqusListingCounterLink:hover {display:block;background:url(../images/comment_grey.png) no-repeat 0 50%;padding:0 0 0 20px;margin:0;}
 
 /* ----- ARTICLE VIEW STYLING ----- */
 /* Disqus comments counter and anchor link */
