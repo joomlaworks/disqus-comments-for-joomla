@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 <a id="startOfPage"></a>
 
 <?php if($disqusArticleCounter): ?>
-<!-- DISQUS comments counter and anchor link -->
+<!-- Disqus comments counter and anchor link -->
 <div class="jwDisqusArticleCounter">
     <span>
         <a class="jwDisqusArticleCounterLink" href="<?php echo $output->itemURL; ?>#disqus_thread" title="<?php echo JText::_("JW_DISQUS_ADD_A_COMMENT"); ?>">
@@ -28,7 +28,7 @@ defined('_JEXEC') or die;
 
 <?php echo $row->text; ?>
 
-<!-- DISQUS comments block -->
+<!-- Disqus comments block -->
 <div class="jwDisqusForm">
     <?php echo $output->comments; ?>
     <div id="jwDisqusFormFooter">
