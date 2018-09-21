@@ -18,7 +18,7 @@ defined('_JEXEC') or die;
 <!-- DISQUS comments counter and anchor link -->
 <div class="jwDisqusArticleCounter">
     <span>
-        <a class="jwDisqusArticleCounterLink" href="#disqus_thread" data-disqus-identifier="<?php echo $output->disqusIdentifier; ?>">
+        <a class="jwDisqusArticleCounterLink" href="<?php echo $output->itemURL; ?>#disqus_thread" title="<?php echo JText::_("JW_DISQUS_ADD_A_COMMENT"); ?>" data-disqus-identifier="<?php echo $output->disqusIdentifier; ?>">
             <?php echo JText::_("JW_DISQUS_VIEW_COMMENTS"); ?>
         </a>
     </span>
