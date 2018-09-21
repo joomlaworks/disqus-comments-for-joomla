@@ -45,4 +45,4 @@ Key benefits for Commenters, Readers
 
 
 ## LEARN MORE
-Visit the Disqus Comments (for Joomla) product page at: http://www.joomlaworks.net/extensions/free/disqus-comments-for-joomla
+Visit the Disqus Comments (for Joomla) product page at: https://www.joomlaworks.net/extensions/free/disqus-comments-for-joomla

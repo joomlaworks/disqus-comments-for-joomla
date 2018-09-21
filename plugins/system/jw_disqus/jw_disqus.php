@@ -1,9 +1,9 @@
 <?php
 /**
- * @version    3.6.x
+ * @version    3.7.0
  * @package    Disqus Comments (for Joomla)
- * @author     JoomlaWorks - http://www.joomlaworks.net
- * @copyright  Copyright (c) 2006 - 2016 JoomlaWorks Ltd. All rights reserved.
+ * @author     JoomlaWorks - https://www.joomlaworks.net
+ * @copyright  Copyright (c) 2006 - 2018 JoomlaWorks Ltd. All rights reserved.
  * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
  */
 
@@ -11,101 +11,99 @@
 defined('_JEXEC') or die ;
 
 jimport('joomla.plugin.plugin');
-if (version_compare(JVERSION, '1.6.0', 'ge'))
-{
-	jimport('joomla.html.parameter');
+if (version_compare(JVERSION, '1.6.0', 'ge')) {
+    jimport('joomla.html.parameter');
 }
 
 class plgSystemJw_disqus extends JPlugin
 {
 
-	// JoomlaWorks reference parameters
-	var $plg_name = "jw_disqus";
-	var $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.6.0) starts here -->\n";
-	var $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.6.0) ends here -->\n";
+    // JoomlaWorks reference parameters
+    public $plg_name = "jw_disqus";
+    public $plg_copyrights_start = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) starts here -->\n";
+    public $plg_copyrights_end = "\n\n<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) ends here -->\n";
 
-	function __construct(&$subject, $params)
-	{
-		parent::__construct($subject, $params);
-		
-		// Define the DS constant under Joomla! 3.0
-		if (!defined('DS'))
-		{
-			define('DS', DIRECTORY_SEPARATOR);
-		}
-	}
+    public function __construct(&$subject, $params)
+    {
+        parent::__construct($subject, $params);
 
-	function onAfterRender()
-	{
+        // Define the DS constant under Joomla! 3.0
+        if (!defined('DS')) {
+            define('DS', DIRECTORY_SEPARATOR);
+        }
+    }
 
-		// API
-		$mainframe = JFactory::getApplication();
-		$document = JFactory::getDocument();
+    public function onAfterRender()
+    {
 
-		// Assign paths
-		$sitePath = JPATH_SITE;
-		$siteUrl = JURI::root(true);
+        // API
+        $mainframe = JFactory::getApplication();
+        $document = JFactory::getDocument();
 
-		// Requests
-		$option = JRequest::getCmd('option');
-		$view = JRequest::getCmd('view');
-		$layout = JRequest::getCmd('layout');
-		$page = JRequest::getCmd('page');
-		$secid = JRequest::getInt('secid');
-		$catid = JRequest::getInt('catid');
-		$itemid = JRequest::getInt('Itemid');
-		if (!$itemid)
-			$itemid = 999999;
+        // Assign paths
+        $sitePath = JPATH_SITE;
+        $siteUrl = JURI::root(true);
 
-		// Check if plugin is enabled
-		if (JPluginHelper::isEnabled('system', $this->plg_name) == false)
-			return;
+        // Requests
+        $option = JRequest::getCmd('option');
+        $view = JRequest::getCmd('view');
+        $layout = JRequest::getCmd('layout');
+        $page = JRequest::getCmd('page');
+        $secid = JRequest::getInt('secid');
+        $catid = JRequest::getInt('catid');
+        $itemid = JRequest::getInt('Itemid');
+        if (!$itemid) {
+            $itemid = 999999;
+        }
 
-		// Quick check to decide whether to render the plugin or not
-		if (strpos(JResponse::getBody(), '#disqus_thread') === false)
-			return;
+        // Check if plugin is enabled
+        if (JPluginHelper::isEnabled('system', $this->plg_name) == false) {
+            return;
+        }
 
-		// Load the plugin language file the proper way
-		JPlugin::loadLanguage('plg_system_'.$this->plg_name, JPATH_ADMINISTRATOR);
+        // Quick check to decide whether to render the plugin or not
+        if (strpos(JResponse::getBody(), '#disqus_thread') === false) {
+            return;
+        }
 
-		// Admin check
-		if ($mainframe->isAdmin())
-			return;
+        // Load the plugin language file the proper way
+        JPlugin::loadLanguage('plg_system_'.$this->plg_name, JPATH_ADMINISTRATOR);
 
-		// ----------------------------------- Get plugin parameters -----------------------------------
-		$plugin = JPluginHelper::getPlugin('content', $this->plg_name);
-		$pluginParams = version_compare(JVERSION, '1.6.0', 'lt') ? new JParameter($plugin->params) : new JRegistry($plugin->params);
+        // Admin check
+        if ($mainframe->isAdmin()) {
+            return;
+        }
 
-		$disqusSubDomain = trim($pluginParams->get('disqusSubDomain', ''));
-		$disqusLanguage = $pluginParams->get('disqusLanguage');
+        // ----------------------------------- Get plugin parameters -----------------------------------
+        $plugin = JPluginHelper::getPlugin('content', $this->plg_name);
+        $pluginParams = version_compare(JVERSION, '1.6.0', 'lt') ? new JParameter($plugin->params) : new JRegistry($plugin->params);
 
-		if (!$disqusSubDomain)
-		{
-			// Quick check before we proceed
-			return;
-		}
-		else
-		{
-			// Perform some parameter cleanups
-			$disqusSubDomain = str_replace(array(
-				'http://',
-				'https://',
-				'.disqus.com/',
-				'.disqus.com'
-			), array(
-				'',
-				'',
-				'',
-				''
-			), $disqusSubDomain);
-		}
+        $disqusSubDomain = trim($pluginParams->get('disqusSubDomain', ''));
+        $disqusLanguage = $pluginParams->get('disqusLanguage');
 
-		// Append head includes only when the document is in HTML mode
-		if (JRequest::getCmd('format') == 'html' || JRequest::getCmd('format') == '')
-		{
-			$elementToGrab = '</body>';
-			$htmlToInsert = "
-				<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.6.0) -->
+        if (!$disqusSubDomain) {
+            // Quick check before we proceed
+            return;
+        } else {
+            // Perform some parameter cleanups
+            $disqusSubDomain = str_replace(array(
+                'http://',
+                'https://',
+                '.disqus.com/',
+                '.disqus.com'
+            ), array(
+                '',
+                '',
+                '',
+                ''
+            ), $disqusSubDomain);
+        }
+
+        // Append head includes only when the document is in HTML mode
+        if (JRequest::getCmd('format') == 'html' || JRequest::getCmd('format') == '') {
+            $elementToGrab = '</body>';
+            $htmlToInsert = "
+				<!-- JoomlaWorks \"Disqus Comments (for Joomla)\" (v3.7.0) -->
 				<script type=\"text/javascript\">
 					//<![CDATA[
 					var disqus_shortname = '{$disqusSubDomain}';
@@ -122,12 +120,10 @@ class plgSystemJw_disqus extends JPlugin
 				</script>
 			";
 
-			// Output
-			$buffer = JResponse::getBody();
-			$buffer = str_replace($elementToGrab, $htmlToInsert."\n\n".$elementToGrab, $buffer);
-			JResponse::setBody($buffer);
-		}
-
-	} // END FUNCTION
-
+            // Output
+            $buffer = JResponse::getBody();
+            $buffer = str_replace($elementToGrab, $htmlToInsert."\n\n".$elementToGrab, $buffer);
+            JResponse::setBody($buffer);
+        }
+    } // END FUNCTION
 } // END CLASS
