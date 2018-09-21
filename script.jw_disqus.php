@@ -4,7 +4,7 @@
  * @package    Disqus Comments (for Joomla)
  * @author     JoomlaWorks - https://www.joomlaworks.net
  * @copyright  Copyright (c) 2006 - 2018 JoomlaWorks Ltd. All rights reserved.
- * @license    GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+ * @license    https://www.joomlaworks.net/license
  */
 
 // no direct access
@@ -71,7 +71,7 @@ class Com_jw_disqusInstallerScript
         $language->load('com_jw_disqus');
         $rows = 0; ?>
 		<style>
-			@import url("http://yui.yahooapis.com/pure/0.5.0/pure-min.css");
+			@import url("https://unpkg.com/purecss@1.0.0/build/pure-min.css");
 			.pure-table {width:80%;}
 		</style>
 

@@ -39,7 +39,7 @@ Key benefits for Commenters, Readers
 ## EXTENSION FEATURES
 - Options for comments counter/anchor link for listing and article pages
 - Choose to integrate Disqus comments in specific categories and/or menu items
-- Neutral design for easy integration on any template design. Use CSS for total design control: http://bit.ly/disqusStyling
+- Neutral design for easy integration on any template design. Use CSS for total design control: https://help.disqus.com/installation/disqus-appearance-tweaks
 - Fully MVC skinnable. Just copy the /plugins/content/jw_disqus/tmpl folder (in Joomla 1.5) or /plugins/content/jw_disqus/jw_disqus/tmpl (in Joomla 2.5+) inside your Joomla template's /html folder, rename to /html/jw_disqus and start tweaking the HTML and CSS!
 - Option for testing Disqus comments plugin locally before going live.
 
