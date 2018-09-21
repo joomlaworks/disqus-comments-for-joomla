@@ -221,7 +221,7 @@ class plgContentJw_disqus extends JPlugin
                 $plgCSS = DisqusHelper::getTemplatePath($this->plg_name, 'css/template.css');
                 $plgCSS = $plgCSS->http;
 
-                $document->addStyleSheet($plgCSS);
+                $document->addStyleSheet($plgCSS.'?v=3.7.0');
 
                 // JS
                 if (version_compare(JVERSION, '1.6.0', 'ge')) {
